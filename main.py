@@ -17,11 +17,11 @@ def pdf_to_markdown(pdf_path, output_dir="output"):
 
     # Construct the command for Marker
     command = [
-        "python",  # Using Python command
+        "python", # Using Python command
         "/Users/deepakvenugopal/pdf-trials/marker-trial/.venv/bin/marker_single",  # Full path to marker script
         pdf_path,  # Input PDF
-        "--output_format", "markdown",  # Specify Markdown output
-        "--output_dir", output_dir  # Specify output directory
+        "--output_format", "markdown",   # Specify Markdown output
+        "--output_dir", output_dir , "--debug", "--use_llm" # Specify output directory
     ]
 
     try:
@@ -38,7 +38,7 @@ def pdf_to_markdown(pdf_path, output_dir="output"):
 # Example Usage
 if __name__ == "__main__":
     pdf_file = "docs/pdf/R1-2112947-accepted-all-changes.pdf"  # Path to your PDF
-    output_directory = "docs/markdown_output/accepted-all-changes"
+    output_directory = "docs/markdown_output/with_debug_and_llm"
     markdown_file = pdf_to_markdown(pdf_file, output_directory)
 
     if markdown_file:
